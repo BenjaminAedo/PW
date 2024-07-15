@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% block content %}
+  <div class="card">
+    <div class="card-header">
+      <h1>Editar datos</h1>
+    </div>
+    <div class="card-body">
+      <button type="button"><a href="{% url 'agregar' %}">Agregar</a></button>
+
+      <div id="idMensajes">
+        {% if mensaje %}
+          {{ mensaje }}
+        {% endif %}
+      </div>
+
+      <table>
+        {% if productos %}
+          <th>nombre</th>
+          <th>categoria</th>
+          <th>precio</th>
+          <th>Eliminar</th>
+          
+          {% for x in productos %}
+            <tr>
+              <td>{{ x.nombre }}</td>
+              <td>{{ x.categoria }}</td>
+              <td>{{ x.precio }}</td>
+              <td>
+                <a href="{% url 'eliminarProd' %}">Eliminar</a>
+              </td>
+              
+            </tr>
+          {% endfor %}
+        {% endif %}
+      </table>
+    </div>
+  </div>
+{% endblock %}

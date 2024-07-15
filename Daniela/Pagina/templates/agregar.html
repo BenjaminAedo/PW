@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<div class="card text-center">
+  <div class="card-body">
+    
+<h2>Agregar Productos</h2><br>
+<a href="{% url 'crud' %}">Volver</a>
+            
+{{error}}
+<form action="/agregar/" method="POST">
+  {% csrf_token %}
+  {{form}}
+
+  <button>Save</button>
+</form> 
+  </div>
+
+</div>
+
+  
+{% endblock %}

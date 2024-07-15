@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+{% load static %}
+
+{% block content %}
+    
+    <div class="card" style="width: 18rem;">
+        <div class="card-body ">
+          <h1>productos</h1>
+            <br>
+            {% for producto in productos %}
+                {{producto.nombre}},{{producto.categoria}},{{producto.precio}} <br>
+            {% endfor %}
+        </div>
+      </div>
+
+
+{% endblock %}
